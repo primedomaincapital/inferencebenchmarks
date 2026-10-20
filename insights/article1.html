@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Price of a Token: Inside the LLM Inference Cost Wars | InferenceBenchmarks.com</title>
+<meta name="description" content="LLM token prices fell up to 36x after DeepSeek's pricing shock. Inside the inference cost wars reshaping AI economics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "The Price of a Token: Inside the LLM Inference Cost Wars",
+ "description": "LLM token prices fell up to 36x after DeepSeek's pricing shock. Inside the inference cost wars reshaping AI economics.",
+ "author": {
+  "@type": "Organization",
+  "name": "Prime Domain Capital"
+ },
+ "publisher": {
+  "@type": "Organization",
+  "name": "Prime Domain Capital"
+ },
+ "datePublished": "2026-10-19",
+ "mainEntityOfPage": "https://inferencebenchmarks.com/insights/article1.html"
+}
+</script>
+<style>
+:root{--graphite:#0b0e13;--panel:#12161d;--line:rgba(110,168,254,.16);--blue:#6ea8fe;--blue-dim:#3d6db8;--paper:#eef1f5;--dim:#9aa7b8}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--graphite);color:var(--paper);font-family:'Inter',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:20px 48px;background:linear-gradient(to bottom,rgba(11,14,19,.94),transparent)}
+nav a.brand{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.3em;color:var(--blue);text-transform:uppercase;text-decoration:none}
+nav .price-tag{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--dim);text-transform:uppercase}
+nav .price-tag b{color:var(--paper);font-weight:500}
+section{position:relative;z-index:1;padding:120px 48px;max-width:1280px;margin:0 auto}
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+.kicker{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--blue-dim);margin-bottom:20px}
+h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(38px,5.4vw,68px);line-height:1.12;margin-bottom:28px}
+h1 em{font-style:italic;color:var(--blue)}
+h2{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(30px,4vw,46px);line-height:1.18;margin-bottom:28px}
+h2 em{font-style:italic;color:var(--blue)}
+.art-h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(24px,3vw,32px);margin:46px 0 18px;color:var(--paper)}
+.deck{font-size:20px;color:var(--dim);max-width:64ch}
+.byline{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue-dim);margin-top:26px}
+.body-copy{font-size:18px;color:var(--dim);max-width:68ch;margin-bottom:22px}
+.body-copy strong{color:var(--paper);font-weight:500}
+.pull{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(24px,3vw,34px);line-height:1.4;color:var(--paper);border-left:2px solid var(--blue);padding-left:32px;margin:48px 0;max-width:34ch}
+.band{position:relative;z-index:1}
+.band img{width:100%;height:420px;object-fit:cover;display:block}
+.btn{display:inline-block;padding:18px 42px;background:var(--blue);color:#0b0e13;text-decoration:none;font-size:13px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;transition:.35s;border:1px solid var(--blue)}
+.btn:hover{background:transparent;color:var(--blue)}
+.cta-panel{position:relative;z-index:1;text-align:center;padding:130px 48px;overflow:hidden}
+.cta-panel .bg{position:absolute;inset:0;z-index:-1}
+.cta-panel .bg img{width:100%;height:100%;object-fit:cover;opacity:.26}
+.cta-panel .bg::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(11,14,19,.3),var(--graphite) 90%)}
+.cta-panel h2{max-width:20ch;margin:0 auto 24px}
+.price-big{font-family:'Fraunces',serif;font-size:clamp(52px,6.6vw,88px);color:var(--blue);margin:8px 0 34px}
+.backlink{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue);text-decoration:none}
+footer{position:relative;z-index:1;border-top:1px solid var(--line);padding:42px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--dim);letter-spacing:.06em}
+footer a{color:var(--blue);text-decoration:none}
+@media(max-width:900px){nav,section{padding-left:24px;padding-right:24px}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="brand" href="../index.html">InferenceBenchmarks.com</a>
+  <div class="price-tag">Buy Now &nbsp;<b>$17,888</b></div>
+</nav>
+<section style="padding-bottom:40px">
+  <a class="backlink" href="../index.html">&larr; Back to InferenceBenchmarks.com</a>
+  <div class="kicker reveal" style="margin-top:44px">Insights &middot; AI inference economics</div>
+  <h1 class="reveal">The Price of a Token: Inside the LLM Inference Cost Wars</h1>
+  <p class="deck reveal">LLM token prices fell up to 36x after DeepSeek's pricing shock. Inside the inference cost wars reshaping AI economics.</p>
+  <div class="byline reveal">Prime Domain Capital &middot; October 2026</div>
+</section>
+<div class="band reveal"><img src="../images/photo2.jpg" alt="Data center corridor lined with server racks"></div>
+<section style="padding-top:70px">
+<p class="body-copy reveal">On Monday, January 27, 2025, Nvidia lost $589 billion in market value in a single trading session — the largest one-day wipeout in American stock-market history. There was no earnings miss, no guidance cut, no scandal. The trigger was a pricing page. DeepSeek, a lab out of Hangzhou, had published API rates for its new V3 model: $0.14 per million input tokens, $0.28 per million output tokens. Wall Street did the arithmetic against what the incumbents were charging, and the largest company on earth lost roughly the GDP of Argentina before lunch.</p>
+<h2 class="art-h2 reveal">The $30 token era</h2>
+<p class="body-copy reveal">Not long before, the numbers were an order of magnitude higher. When OpenAI released GPT-4 in March 2023, it priced API access at $30 per million input tokens and $60 per million output tokens. Entire categories of product died at the whiteboard stage.</p>
+<p class="body-copy reveal">The cuts came steadily, then all at once. GPT-4o arrived in May 2024 at $5 input and $15 output per million tokens; within months the price had halved to $2.50 and $10. OpenAI's o1 reasoning model launched in December 2024 at $15 and $60 — a brief return to GPT-4-era pricing — and six weeks later the company undercut itself with o3-mini at $1.10 input and $4.40 output. By 2026, OpenAI's cheapest model, GPT-5 nano, was a nickel per million input tokens — the company that invented the $60 token now sells them for a nickel.</p>
+<h2 class="art-h2 reveal">The DeepSeek shock</h2>
+<p class="body-copy reveal">DeepSeek V3's headline wasn't just the price — it was the claim that accompanied it. A 671-billion-parameter mixture-of-experts model that activates only about 37 billion parameters per inference, trained for a claimed $5.57 million on 2,048 H800 GPUs, and it matched GPT-4o on key benchmarks at roughly one-eighteenth the input price and one-thirty-sixth the output price. Whether every line of that cost claim survives scrutiny matters less than what buyers believed: frontier-quality inference could cost 95 percent less.</p>
+<div class="pull reveal">&ldquo;The winners of the inference cost wars won't be the teams with the best model. They'll be the teams with the best cost model.&rdquo;</div>
+<p class="body-copy reveal">The response was immediate. Within ninety days, OpenAI, Google, and Anthropic had all repriced. Google slashed Gemini rates by up to 85 percent. OpenAI shipped o3-mini and later GPT-5 nano. Anthropic chose a different lane, holding Claude 3 Haiku at $0.25 input and competing on enterprise features rather than joining the race to the floor. The industry's price tape now spans roughly 250x from bottom to top: a Qwen 3.5 0.8B at $0.02 per million input tokens against Claude Opus-tier output at $25. Epoch AI's widely cited estimate puts the underlying trend at roughly 40x cheaper per year since 2020 — a deflation rate with no precedent in enterprise software.</p>
+<h2 class="art-h2 reveal">The tape nobody controls</h2>
+<p class="body-copy reveal">In this market, the most-watched screen isn't any lab's pricing page. It's Artificial Analysis, the independent benchmarking outfit founded by George Cameron, which tracks inference prices across providers and revalidates them hourly. Its charts have become the closest thing AI has to a consolidated tape — and they reveal something stranger than falling prices: the same weights rent at wildly different prices depending on who serves them.</p>
+<p class="body-copy reveal">Open-weight models are a commodity by definition. A Llama 3.1 70B served by one provider is bit-for-bit the same model served by another. Yet Artificial Analysis's data shows providers charging anywhere from $0.20 to $2.90 per million tokens for that identical model, with the median near $0.70. For the 405-billion-parameter version, the range runs $0.90 to $9.50. A Mixtral 8x22B instruct model spans $0.60 to $3.00 across five providers. The market has not converged on a single clearing price; it has converged on a spread, and the spread itself is the story.</p>
+<h2 class="art-h2 reveal">What this does to startup margins</h2>
+<p class="body-copy reveal">For AI startups, the cost war is oxygen and quicksand at once. Oxygen, because a 36x price cut turns unit economics that killed companies in 2023 into gross margins that attract investors in 2026. A support bot that was underwater at GPT-4 prices becomes a 70-percent-margin business at DeepSeek prices. Quicksand, because the same repricing destroys any startup whose pitch was "we built on the best model" — when the best model's price falls 90 percent, the moat evaporates and every competitor reprices overnight.</p>
+<p class="body-copy reveal">The survivors are learning that the list price is not the cost. Real inference economics live in the mechanics the tape barely captures: prompt caching, which cuts effective input costs 50 to 90 percent (DeepSeek's cache hits price at $0.0028 per million, Anthropic's at $0.20); batch APIs for non-real-time work; routing each query to the smallest model that clears the quality bar. AssemblyAI's October 2026 Voice Standard Bench made the same point for voice AI: the largest bills come from downstream processing, not transcription. CloudZero's 2024 study found teams without cost alerts overspend by 23 percent — a tax on inattention that compounds as token volumes scale.</p>
+<h2 class="art-h2 reveal">The counterargument: is any of this real?</h2>
+<p class="body-copy reveal">There is a harder question the price-war narrative tends to dodge. DeepSeek's $5.57 million training figure covers pre-training compute only — not data collection, failed experiments, researcher salaries, or the serving infrastructure behind the API. The efficiency techniques are genuine (mixture of experts, multi-token prediction, FP8 training), but the sticker price may be subsidized, strategically or structurally, and a price war fought with subsidized tokens ends when the subsidies end.</p>
+<p class="body-copy reveal">There is also Jevons' paradox to contend with: cheaper tokens don't shrink total inference spending, they expand it. Every 10x price cut turns uneconomic workloads viable — agentic loops, video generation, always-on copilots — and total demand grows faster than unit prices fall. The labs know this. That is precisely why they keep cutting: the prize isn't margin per token, it's volume of tokens. And the enterprise markup is a reminder that the war is being fought at the API tier, not everywhere — the same DeepSeek R1 that lists at $0.55 input and $2.19 output direct costs $1.35 and $5.40 through Azure OpenAI and Amazon Bedrock, a 2–5x premium for compliance, uptime, and a procurement department's signature.</p>
+<h2 class="art-h2 reveal">The implication</h2>
+<p class="body-copy reveal">The token price war is not ending. The compression of frontier-model capability into a two-point band on the leading intelligence indices means price is now the primary axis of competition, and every lab has a cheaper model in the pipeline. For buyers, the durable advantage was never picking the right model — it was building the cost discipline to switch models at will: caching, routing, and measurement that survive the next 10x cut. The winners of the inference cost wars won't be the teams with the best model. They'll be the teams with the best cost model.</p>
+<p class="body-copy reveal"><em>The category-defining name in AI inference intelligence — inferencebenchmarks.com — is currently available for acquisition by the firm positioned to own this space.</em></p>
+</section>
+<div class="cta-panel">
+  <div class="bg"><img src="../images/photo4.jpg" alt=""></div>
+  <div class="kicker reveal">Acquisition</div>
+  <h2 class="reveal">Own the name the industry <em>measures by.</em></h2>
+  <div class="price-big reveal">$17,888</div>
+  <div class="reveal"><a class="btn" href="https://www.afternic.com/domain/inferencebenchmarks.com">Buy Now via Afternic</a></div>
+</div>
+<footer>
+  <span>Offered by <strong>Prime Domain Capital</strong> — a private holder of category-defining domains.</span>
+  <span><a href="mailto:info@primedomaincapital.com">info@primedomaincapital.com</a></span>
+</footer>
+<script>
+const io=new IntersectionObserver(e=>e.forEach(v=>{if(v.isIntersecting){v.target.classList.add('in');io.unobserve(v.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+<!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "5fb51d1999084c91989809d7608061e0"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

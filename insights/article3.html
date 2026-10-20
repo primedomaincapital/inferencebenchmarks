@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Nobody Trusts AI Benchmarks (And What Would Fix Them) | InferenceBenchmarks.com</title>
+<meta name="description" content="MMLU has wrong answers, leaked questions, and 14-point contamination gaps. Why AI benchmarks broke — and what would fix them.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "Why Nobody Trusts AI Benchmarks (And What Would Fix Them)",
+ "description": "MMLU has wrong answers, leaked questions, and 14-point contamination gaps. Why AI benchmarks broke \u2014 and what would fix them.",
+ "author": {
+  "@type": "Organization",
+  "name": "Prime Domain Capital"
+ },
+ "publisher": {
+  "@type": "Organization",
+  "name": "Prime Domain Capital"
+ },
+ "datePublished": "2026-10-19",
+ "mainEntityOfPage": "https://inferencebenchmarks.com/insights/article3.html"
+}
+</script>
+<style>
+:root{--graphite:#0b0e13;--panel:#12161d;--line:rgba(110,168,254,.16);--blue:#6ea8fe;--blue-dim:#3d6db8;--paper:#eef1f5;--dim:#9aa7b8}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--graphite);color:var(--paper);font-family:'Inter',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:20px 48px;background:linear-gradient(to bottom,rgba(11,14,19,.94),transparent)}
+nav a.brand{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.3em;color:var(--blue);text-transform:uppercase;text-decoration:none}
+nav .price-tag{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--dim);text-transform:uppercase}
+nav .price-tag b{color:var(--paper);font-weight:500}
+section{position:relative;z-index:1;padding:120px 48px;max-width:1280px;margin:0 auto}
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+.kicker{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--blue-dim);margin-bottom:20px}
+h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(38px,5.4vw,68px);line-height:1.12;margin-bottom:28px}
+h1 em{font-style:italic;color:var(--blue)}
+h2{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(30px,4vw,46px);line-height:1.18;margin-bottom:28px}
+h2 em{font-style:italic;color:var(--blue)}
+.art-h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(24px,3vw,32px);margin:46px 0 18px;color:var(--paper)}
+.deck{font-size:20px;color:var(--dim);max-width:64ch}
+.byline{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue-dim);margin-top:26px}
+.body-copy{font-size:18px;color:var(--dim);max-width:68ch;margin-bottom:22px}
+.body-copy strong{color:var(--paper);font-weight:500}
+.pull{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(24px,3vw,34px);line-height:1.4;color:var(--paper);border-left:2px solid var(--blue);padding-left:32px;margin:48px 0;max-width:34ch}
+.band{position:relative;z-index:1}
+.band img{width:100%;height:420px;object-fit:cover;display:block}
+.btn{display:inline-block;padding:18px 42px;background:var(--blue);color:#0b0e13;text-decoration:none;font-size:13px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;transition:.35s;border:1px solid var(--blue)}
+.btn:hover{background:transparent;color:var(--blue)}
+.cta-panel{position:relative;z-index:1;text-align:center;padding:130px 48px;overflow:hidden}
+.cta-panel .bg{position:absolute;inset:0;z-index:-1}
+.cta-panel .bg img{width:100%;height:100%;object-fit:cover;opacity:.26}
+.cta-panel .bg::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(11,14,19,.3),var(--graphite) 90%)}
+.cta-panel h2{max-width:20ch;margin:0 auto 24px}
+.price-big{font-family:'Fraunces',serif;font-size:clamp(52px,6.6vw,88px);color:var(--blue);margin:8px 0 34px}
+.backlink{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue);text-decoration:none}
+footer{position:relative;z-index:1;border-top:1px solid var(--line);padding:42px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--dim);letter-spacing:.06em}
+footer a{color:var(--blue);text-decoration:none}
+@media(max-width:900px){nav,section{padding-left:24px;padding-right:24px}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="brand" href="../index.html">InferenceBenchmarks.com</a>
+  <div class="price-tag">Buy Now &nbsp;<b>$17,888</b></div>
+</nav>
+<section style="padding-bottom:40px">
+  <a class="backlink" href="../index.html">&larr; Back to InferenceBenchmarks.com</a>
+  <div class="kicker reveal" style="margin-top:44px">Insights &middot; AI inference economics</div>
+  <h1 class="reveal">Why Nobody Trusts AI Benchmarks (And What Would Fix Them)</h1>
+  <p class="deck reveal">MMLU has wrong answers, leaked questions, and 14-point contamination gaps. Why AI benchmarks broke — and what would fix them.</p>
+  <div class="byline reveal">Prime Domain Capital &middot; October 2026</div>
+</section>
+<div class="band reveal"><img src="../images/photo4.jpg" alt="Server rack detail in a data center"></div>
+<section style="padding-top:70px">
+<p class="body-copy reveal">In June 2024, researchers at the University of Edinburgh checked the exam's homework: working through 3,000 questions from MMLU — the Massive Multitask Language Understanding benchmark, the most-cited test in AI — they found 6.5 percent had wrong answer keys, ambiguous wording, or unparseable options. In the virology subset, 57 percent were defective; a third had completely wrong labeled answers. The team, led by Aryo Gema, published a corrected MMLU-Redux and gave it away free. Two years later, no flagship launch has switched to it. Every press release still quotes the broken original — to one decimal place.</p>
+<h2 class="art-h2 reveal">The exam is wrong</h2>
+<p class="body-copy reveal">When the answer key is wrong for one question in fifteen, a model improving from 88.1 to 88.7 percent hasn't necessarily learned chemistry — it may have learned the key's mistakes. That is Goodhart's law at industrial scale: millions spent optimizing against a target that is measurably defective at exactly the advertised precision.</p>
+<p class="body-copy reveal">Work in late 2024 found models have systematic biases toward particular answer positions: reorder the options and a score can swing by as much as 24 percentage points. The benchmark wasn't measuring knowledge. It was measuring an interaction between knowledge and layout.</p>
+<h2 class="art-h2 reveal">The exam leaked</h2>
+<p class="body-copy reveal">Benchmarks must be public to be useful; public means scrapeable; scrapeable means test questions end up in the training data of the next generation. Microsoft built MMLU-CF, a contamination-free variant rephrasing questions and shuffling options. The results were stark. GPT-4o fell from 88.0 percent to 73.4. GPT-4-Turbo dropped from 86.5 to 70.4. Meta's Llama 3.3 70B lost 17.5 points, from 86.3 to 68.8; Microsoft's own Phi-4 fell 17 points, from 84.8 to 67.8. Every model shed 14 to 17.5 points the moment the answers couldn't be recalled.</p>
+<div class="pull reveal">&ldquo;The fix isn't a harder test. It's an independent one.&rdquo;</div>
+<p class="body-copy reveal">When researchers asked GPT-4 to guess the missing answer options in MMLU questions — impossible without having seen the test — it guessed correctly 57 percent of the time. When studies split benchmark questions by release date, models consistently score 8 to 15 percentage points better on questions published before their training cutoff than after. Dekoninck and colleagues showed in 2024 the leak needn't even be the test itself: fine-tuning on benchmark-style samples lifted scores 8 to 11 percent on held-out questions. Aleph Alpha's 2025 experiments found detectors caught only 13 percent of leaked TriviaQA questions — the industry's decontamination filters are, at best, sieves.</p>
+<h2 class="art-h2 reveal">The exam saturated</h2>
+<p class="body-copy reveal">By 2025, the top five frontier models compressed into a band above 89 percent on MMLU, separated by less than two points — smaller than the noise from prompt formatting alone. HumanEval, OpenAI's 164-problem coding benchmark, shows the same arc: top models clear 90 percent on tasks — write a function that reverses a string — bearing little resemblance to real software engineering. Sebastian Raschka, one of the field's most-cited educators, concluded that benchmark numbers are "no longer trustworthy indicators of LLM performance."</p>
+<p class="body-copy reveal">The gaming has a name: benchmaxxing. The techniques include checkpoint selection (evaluate many runs, publish the best), format overfitting (fine-tune on multiple-choice style), and eval-specific prompting (tune system prompts to the scoring harness). The Allen Institute for AI's Fluid Benchmarking delivered the quietest indictment in 2025: 100 well-chosen questions rank models more accurately than the full 14,000. The other 13,900 were too easy, too hard, or actively misleading.</p>
+<h2 class="art-h2 reveal">The wrong exam, measured twice</h2>
+<p class="body-copy reveal">Beneath this sits a category error. Most famous benchmarks measure what a model learned in training. Almost nobody measures, with equal rigor, inference performance — the thing every buyer actually pays for. An MMLU score says nothing about time-to-first-token at production load, throughput in tokens per second, latency degradation at long context, or cost per million tokens on real traffic. Training benchmarks like MLCommons' MLPerf measure training throughput; they were never designed to answer what a model costs per query or how fast users see the first word.</p>
+<p class="body-copy reveal">That gap is why independent inference benchmarking emerged as a discipline. Artificial Analysis, founded by George Cameron, publishes its configurations and runs separate inference-performance leaderboards — and even it demonstrates the versioning problem: its v4.0 methodology removed MMLU-Pro and LiveCodeBench, rendering older scores incomparable with newer ones. Stanford's HELM, once the academic gold standard for transparent evaluation, entered maintenance mode on June 1, 2026. The referees keep retiring or resetting; the scoreboard keeps printing decimals.</p>
+<h2 class="art-h2 reveal">The counterargument: broken is not useless</h2>
+<p class="body-copy reveal">The honest defense deserves a hearing. MMLU still works as a sanity check: a model scoring below 80 percent almost certainly has real capability gaps. LiveBench and LiveCodeBench resist contamination by drawing questions from recently released sources; private held-out evaluations — Scale AI's SEAL program is the prominent example — test on sets that never touch the public internet. Nor is every score inflation: the underlying capability gains of the past three years are visible in production revenue, not just leaderboards.</p>
+<p class="body-copy reveal">But the defense concedes the essential point: benchmarks survive as sanity checks and rough filters, not as rankings — the decimal-point theater of launch-day press releases and procurement decisions made on two-point differences smaller than the test's own error rate.</p>
+<h2 class="art-h2 reveal">What an honest benchmark would look like</h2>
+<p class="body-copy reveal">The fix is not a harder test; harder tests contaminate on schedule. The fix is institutional: independent inference benchmarking as an industry utility, on the model of financial-market data rather than vendor marketing. The rules are simple to state: publish the prompts, seeds, harness, and configuration — every number reproducible by a third party. Measure inference, not just intelligence: time-to-first-token, tokens per second, p95 latency, price per million tokens, all on standardized workloads. Refresh items continuously from post-cutoff sources; report contamination methodology alongside scores; version ruthlessly and mark old scores incomparable when the ruler changes.</p>
+<p class="body-copy reveal">None of this requires new science. It requires a referee whose incentives point at accuracy rather than launch day — and the willingness of labs to submit to measurement they don't control. That willingness is the scarce resource. Until it arrives, every buyer faces the same arithmetic: published research puts score inflation between 6 and 17 points, the rankings at the top are noise, and the only measurements worth paying for are run on your own workload, at your own traffic pattern, by someone with no model to sell.</p>
+<p class="body-copy reveal"><em>The category-defining name in AI inference intelligence — inferencebenchmarks.com — is currently available for acquisition by the firm positioned to own this space.</em></p>
+</section>
+<div class="cta-panel">
+  <div class="bg"><img src="../images/photo2.jpg" alt=""></div>
+  <div class="kicker reveal">Acquisition</div>
+  <h2 class="reveal">Own the name the industry <em>measures by.</em></h2>
+  <div class="price-big reveal">$17,888</div>
+  <div class="reveal"><a class="btn" href="https://www.afternic.com/domain/inferencebenchmarks.com">Buy Now via Afternic</a></div>
+</div>
+<footer>
+  <span>Offered by <strong>Prime Domain Capital</strong> — a private holder of category-defining domains.</span>
+  <span><a href="mailto:info@primedomaincapital.com">info@primedomaincapital.com</a></span>
+</footer>
+<script>
+const io=new IntersectionObserver(e=>e.forEach(v=>{if(v.isIntersecting){v.target.classList.add('in');io.unobserve(v.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+<!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "5fb51d1999084c91989809d7608061e0"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

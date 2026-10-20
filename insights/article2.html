@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GPU Clouds, Ranked: What Compute Actually Costs in 2026 | InferenceBenchmarks.com</title>
+<meta name="description" content="H100 rents range from $2.69 to $12.29 per GPU-hour. What the same chip actually costs across clouds — and why.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "GPU Clouds, Ranked: What Compute Actually Costs in 2026",
+ "description": "H100 rents range from $2.69 to $12.29 per GPU-hour. What the same chip actually costs across clouds \u2014 and why.",
+ "author": {
+  "@type": "Organization",
+  "name": "Prime Domain Capital"
+ },
+ "publisher": {
+  "@type": "Organization",
+  "name": "Prime Domain Capital"
+ },
+ "datePublished": "2026-10-19",
+ "mainEntityOfPage": "https://inferencebenchmarks.com/insights/article2.html"
+}
+</script>
+<style>
+:root{--graphite:#0b0e13;--panel:#12161d;--line:rgba(110,168,254,.16);--blue:#6ea8fe;--blue-dim:#3d6db8;--paper:#eef1f5;--dim:#9aa7b8}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--graphite);color:var(--paper);font-family:'Inter',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:20px 48px;background:linear-gradient(to bottom,rgba(11,14,19,.94),transparent)}
+nav a.brand{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.3em;color:var(--blue);text-transform:uppercase;text-decoration:none}
+nav .price-tag{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--dim);text-transform:uppercase}
+nav .price-tag b{color:var(--paper);font-weight:500}
+section{position:relative;z-index:1;padding:120px 48px;max-width:1280px;margin:0 auto}
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+.kicker{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--blue-dim);margin-bottom:20px}
+h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(38px,5.4vw,68px);line-height:1.12;margin-bottom:28px}
+h1 em{font-style:italic;color:var(--blue)}
+h2{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(30px,4vw,46px);line-height:1.18;margin-bottom:28px}
+h2 em{font-style:italic;color:var(--blue)}
+.art-h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(24px,3vw,32px);margin:46px 0 18px;color:var(--paper)}
+.deck{font-size:20px;color:var(--dim);max-width:64ch}
+.byline{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue-dim);margin-top:26px}
+.body-copy{font-size:18px;color:var(--dim);max-width:68ch;margin-bottom:22px}
+.body-copy strong{color:var(--paper);font-weight:500}
+.pull{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(24px,3vw,34px);line-height:1.4;color:var(--paper);border-left:2px solid var(--blue);padding-left:32px;margin:48px 0;max-width:34ch}
+.band{position:relative;z-index:1}
+.band img{width:100%;height:420px;object-fit:cover;display:block}
+.btn{display:inline-block;padding:18px 42px;background:var(--blue);color:#0b0e13;text-decoration:none;font-size:13px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;transition:.35s;border:1px solid var(--blue)}
+.btn:hover{background:transparent;color:var(--blue)}
+.cta-panel{position:relative;z-index:1;text-align:center;padding:130px 48px;overflow:hidden}
+.cta-panel .bg{position:absolute;inset:0;z-index:-1}
+.cta-panel .bg img{width:100%;height:100%;object-fit:cover;opacity:.26}
+.cta-panel .bg::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(11,14,19,.3),var(--graphite) 90%)}
+.cta-panel h2{max-width:20ch;margin:0 auto 24px}
+.price-big{font-family:'Fraunces',serif;font-size:clamp(52px,6.6vw,88px);color:var(--blue);margin:8px 0 34px}
+.backlink{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue);text-decoration:none}
+footer{position:relative;z-index:1;border-top:1px solid var(--line);padding:42px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--dim);letter-spacing:.06em}
+footer a{color:var(--blue);text-decoration:none}
+@media(max-width:900px){nav,section{padding-left:24px;padding-right:24px}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="brand" href="../index.html">InferenceBenchmarks.com</a>
+  <div class="price-tag">Buy Now &nbsp;<b>$17,888</b></div>
+</nav>
+<section style="padding-bottom:40px">
+  <a class="backlink" href="../index.html">&larr; Back to InferenceBenchmarks.com</a>
+  <div class="kicker reveal" style="margin-top:44px">Insights &middot; AI inference economics</div>
+  <h1 class="reveal">GPU Clouds, Ranked: What Compute Actually Costs in 2026</h1>
+  <p class="deck reveal">H100 rents range from $2.69 to $12.29 per GPU-hour. What the same chip actually costs across clouds — and why.</p>
+  <div class="byline reveal">Prime Domain Capital &middot; October 2026</div>
+</section>
+<div class="band reveal"><img src="../images/photo3.jpg" alt="Server racks with cabling in a production data center"></div>
+<section style="padding-top:70px">
+<p class="body-copy reveal">In the same week of October 2025, three CFOs got on three earnings calls and said the same thing in different words. Microsoft's Amy Hood told investors the company expected to be capacity constrained through at least the end of its fiscal year, with demand exceeding build-out "resulting in lost revenue opportunities for Azure." Amazon's Andy Jassy allowed that "maybe the bottleneck is power." Alphabet's Anat Ashkenazi said Google expected "to remain in a tight demand-supply environment going into 2026." The message was unmistakable: the clouds cannot build fast enough. And yet the same GPU — the same Nvidia H100, the same 80 gigabytes of HBM3 — rents for $2.69 an hour in one place and $12.29 in another. Scarcity, it turns out, is priced very differently depending on where you stand.</p>
+<h2 class="art-h2 reveal">The numbers, October 2026</h2>
+<p class="body-copy reveal">On-demand list prices for H100 SXM-class GPUs, read from published rate cards in mid-October 2026, line up like this. RunPod's Community Cloud rents a single H100 SXM for $2.69 per GPU-hour; its Secure Cloud tier charges $3.99. Lambda lists $3.99 on an 8-GPU instance ($4.29 for a single GPU). Nebius charges $4.50 per GPU-hour — a price it raised from $3.85 effective October 1, 2026, one of the few increases in a market that otherwise only falls. CoreWeave prices the 8-GPU HGX node at $49.24 an hour, or $6.16 per GPU, with an eight-GPU minimum purchase. AWS's p5.48xlarge instance lists around $55.04 an hour — roughly $6.88 per GPU — while Google Cloud's A3 instance runs about $11.06 and Azure's ND H100 v5 about $12.29 per GPU-hour.</p>
+<p class="body-copy reveal">Below the branded clouds, Vast.ai's marketplace lists H100s at $1.40 to $2.10 an hour; Spheron offers spot at $2.20 and on-demand at $2.64. The H200, Nvidia's 141-gigabyte card for memory-bound inference, follows the same pattern: $4.50 on Nebius, $4.59 on RunPod, $6.30 on CoreWeave, $7.91 on AWS, $10.60 on Google Cloud. None of this spread is silicon. All of it is packaging.</p>
+<h2 class="art-h2 reveal">Why identical chips rent at 4x-plus spreads</h2>
+<p class="body-copy reveal">Start with minimum purchase size. CoreWeave sells the node, not the GPU: eight H100s or nothing, which suits a training cluster and punishes the team that needs one card for an afternoon. Lambda bundles high-speed InfiniBand interconnect into its 1-Click Clusters, which is why those run $5.54 to $6.16 per GPU-hour against $3.99 for the plain instance — the premium is networking, not compute. RunPod's two tiers are an honesty exercise: the Community Cloud's $2.69 buys you a card in someone else's data center with variable reliability, while Secure Cloud's $3.99 buys Tier 3+ facilities and an SLA.</p>
+<div class="pull reveal">&ldquo;The pricing pages are the opening bid, not the answer.&rdquo;</div>
+<p class="body-copy reveal">Then come the line items the headline rate omits: AWS charges for egress; Lambda and Nebius don't. Hyperscaler instances require quota approvals and arrive wrapped in your VPC, IAM, and compliance posture — conveniences that cost real money to replicate. And the neoclouds price leanness into the rate: fewer account managers, thinner support, no procurement theater. A $12.29 Azure GPU and a $2.69 RunPod GPU are the same piece of Nvidia silicon. Everything around the silicon is different.</p>
+<h2 class="art-h2 reveal">Reserved, on-demand, spot: the three prices of everything</h2>
+<p class="body-copy reveal">Every provider sells three products under one name. Reserved capacity — one- to three-year commitments — cuts on-demand roughly in half or more: CoreWeave's reserved H100 runs about $2.47 per GPU-hour, 60 percent off list; AWS bulk reservations sit near $1.90 to $2.10. Spot and preemptible capacity, reclaimable on short notice, goes further: AWS spot discounts reach 90 percent off on-demand; GCP spot lists near $3.69, Azure spot $2.25 to $3.69, Nebius preemptible from $0.79, CoreWeave spot about $2.46.</p>
+<p class="body-copy reveal">The structure of a workload decides which price applies. Steady-state inference belongs on reserved capacity; the utilization is predictable and the discount is the difference between profit and loss. Fault-tolerant training, which checkpoints and resumes, belongs on spot. Bursty experimentation belongs on per-second on-demand. The teams getting crushed run all three on on-demand because nobody segmented them. On-demand itself isn't static: AWS cut H100 on-demand 44 percent in June 2025; Nebius's October 2026 increase was the exception — every renegotiation in this market has trended down.</p>
+<h2 class="art-h2 reveal">The FinOps angle</h2>
+<p class="body-copy reveal">CloudZero's 2024 research found that teams without cost alerts overspend by 23 percent — and that was measured across general cloud spend, before GPU bills became the largest line item in many AI companies' P&amp;Ls. The FinOps playbook for compute now reads: tag every GPU-hour to a workload owner, match purchase model to utilization, and re-bid quarterly — the price you signed six months ago is already stale.</p>
+<p class="body-copy reveal">The demand behind all of this is not speculative. CoreWeave went public in March 2025, raising $1.5 billion at $40 a share near a $23 billion valuation; its second-quarter report showed $1.21 billion in quarterly revenue against a $30.1 billion backlog — contracted demand stretching years ahead. With a $30 billion backlog, the dispersion looks less like inefficiency than structure: buyers pay premiums for guaranteed capacity, and discount hunters take what's left.</p>
+<h2 class="art-h2 reveal">The counterargument: the cheapest sticker is rarely the cheapest bill</h2>
+<p class="body-copy reveal">Every discount has a footnote. Spot instances get reclaimed mid-training run; the 70 percent saved is cold comfort if it costs a week of researcher time debugging a corrupted checkpoint. Marketplace GPUs vary in reliability by host, and a $1.40 Vast.ai card that disappears twice a day is more expensive than a $3.99 Lambda card that doesn't. Egress fees turn cheap compute into expensive pipelines for data-heavy workloads. And the hyperscaler premium buys SOC 2 reports the auditors accept, networking the security team approved, and a procurement relationship the CFO has.</p>
+<p class="body-copy reveal">The honest ranking isn't cheapest to dearest — it's cheapest per unit of risk-adjusted, egress-inclusive, SLA-backed throughput for your workload, a number no pricing page publishes. The pricing pages are the opening bid, not the answer.</p>
+<h2 class="art-h2 reveal">The implication</h2>
+<p class="body-copy reveal">GPU pricing in 2026 is a market that punishes passivity twice: once through list prices that fall without you asking, and once through purchase-model mismatches that bleed while you look elsewhere. The CFOs were right about one thing — capacity is genuinely tight, and the backlog numbers prove buyers keep paying. They were wrong to imply the price is the price. In the most supply-constrained hardware market in computing history, the same chip rents at a 4x-plus spread — and the gap between what compute costs and what you pay for it is a line item worth a full-time owner.</p>
+<p class="body-copy reveal"><em>The category-defining name in AI inference intelligence — inferencebenchmarks.com — is currently available for acquisition by the firm positioned to own this space.</em></p>
+</section>
+<div class="cta-panel">
+  <div class="bg"><img src="../images/photo2.jpg" alt=""></div>
+  <div class="kicker reveal">Acquisition</div>
+  <h2 class="reveal">Own the name the industry <em>measures by.</em></h2>
+  <div class="price-big reveal">$17,888</div>
+  <div class="reveal"><a class="btn" href="https://www.afternic.com/domain/inferencebenchmarks.com">Buy Now via Afternic</a></div>
+</div>
+<footer>
+  <span>Offered by <strong>Prime Domain Capital</strong> — a private holder of category-defining domains.</span>
+  <span><a href="mailto:info@primedomaincapital.com">info@primedomaincapital.com</a></span>
+</footer>
+<script>
+const io=new IntersectionObserver(e=>e.forEach(v=>{if(v.isIntersecting){v.target.classList.add('in');io.unobserve(v.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+<!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "5fb51d1999084c91989809d7608061e0"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
