@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Inference Costs &amp; Benchmark Scores — Market Data | inferencebenchmarks.com</title>
+<meta name="description" content="Market data for inferencebenchmarks.com: aggregated public figures with sources, updated October 25, 2026.">
+<link rel="canonical" href="https://inferencebenchmarks.com/market-data">
+<meta property="og:title" content="AI Inference Costs & Benchmark Scores — Market Data | inferencebenchmarks.com">
+<meta property="og:description" content="Market data for inferencebenchmarks.com: aggregated public figures with sources, updated October 25, 2026.">
+<meta property="og:url" content="https://inferencebenchmarks.com/market-data">
+<meta property="og:type" content="website">
+<style>
+:root{--graphite:#0b0e13;--panel:#12161d;--panel2:#171d27;--line:rgba(110,168,254,.16);--blue:#6ea8fe;--blue-dim:#3d6db8;--paper:#eef1f5;--dim:#9aa7b8}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--graphite);color:var(--paper);font-family:'Inter',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
+.mono{font-family:'IBM Plex Mono',monospace}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:20px 48px;background:linear-gradient(to bottom,rgba(11,14,19,.94),transparent)}
+nav .brand{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.3em;color:var(--blue);text-transform:uppercase}
+nav .price-tag{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--dim);text-transform:uppercase}
+nav .price-tag b{color:var(--paper);font-weight:500}
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 48px 0;z-index:1}
+.hero-bg{position:absolute;inset:0;z-index:-1;overflow:hidden}
+.hero-bg video{width:100%;height:100%;object-fit:cover;opacity:.5}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,var(--graphite) 6%,rgba(11,14,19,.55) 48%,rgba(11,14,19,.35) 100%)}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:var(--blue);margin-bottom:26px}
+.hero h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(46px,7.6vw,110px);line-height:1.02;letter-spacing:-.01em;max-width:16ch;overflow-wrap:break-word;word-break:break-word}
+.hero h1 em{font-style:italic;color:var(--blue)}
+.hero .lede{margin-top:28px;max-width:58ch;font-size:19px;color:var(--dim);font-weight:300}
+.hero-cta{margin-top:42px;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:18px 42px;background:var(--blue);color:#0b0e13;text-decoration:none;font-size:13px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;transition:.35s;border:1px solid var(--blue)}
+.btn:hover{background:transparent;color:var(--blue)}
+.btn.ghost{background:transparent;color:var(--paper);border-color:rgba(238,241,245,.3)}
+.btn.ghost:hover{border-color:var(--blue);color:var(--blue)}
+.tape{margin-top:64px;border-top:1px solid var(--line);padding:22px 0 30px;display:flex;gap:0;flex-wrap:wrap}
+.tape .cell{flex:1 1 220px;padding:6px 26px 6px 0;border-right:1px solid var(--line);margin-right:26px}
+.tape .cell:last-child{border-right:none}
+.tape .v{font-family:'IBM Plex Mono',monospace;font-size:15px;color:var(--paper)}
+.tape .k{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);margin-top:5px}
+section{position:relative;z-index:1;padding:120px 48px;max-width:1280px;margin:0 auto}
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+.kicker{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--blue-dim);margin-bottom:20px}
+h2{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(36px,4.8vw,62px);line-height:1.13;margin-bottom:32px}
+h2 em{font-style:italic;color:var(--blue)}
+.body-copy{font-size:18px;color:var(--dim);max-width:68ch;margin-bottom:22px}
+.body-copy strong{color:var(--paper);font-weight:500}
+.pull{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(24px,3vw,36px);line-height:1.4;color:var(--paper);border-left:2px solid var(--blue);padding-left:32px;margin:54px 0;max-width:32ch}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-top:20px}
+.duo img{width:100%;height:520px;object-fit:cover;filter:saturate(.9) contrast(1.04)}
+.duo .cap{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue-dim);margin-top:14px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:70px}
+.stat{background:var(--graphite);padding:52px 40px}
+.stat .n{font-family:'Fraunces',serif;font-size:clamp(38px,4.4vw,60px);color:var(--blue);font-weight:400}
+.stat .l{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-top:12px;line-height:1.6}
+.band{position:relative;z-index:1;margin:30px 0}
+.band img{width:100%;height:400px;object-fit:cover;opacity:.9}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:50px}
+.card{border:1px solid var(--line);padding:42px 34px;transition:.35s;background:var(--panel)}
+.card:hover{border-color:var(--blue);transform:translateY(-6px)}
+.card h3{font-family:'Fraunces',serif;font-weight:500;font-size:22px;margin-bottom:15px;color:var(--paper)}
+.card p{font-size:15px;color:var(--dim)}
+.card .read{display:inline-block;margin-top:20px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);text-decoration:none;border-bottom:1px solid var(--blue-dim);padding-bottom:5px;transition:.3s}
+.card .read:hover{border-color:var(--blue)}
+.faq{margin-top:20px;border-top:1px solid var(--line)}
+.faq .q{padding:30px 0;border-bottom:1px solid var(--line)}
+.faq .q h3{font-family:'Fraunces',serif;font-weight:500;font-size:21px;margin-bottom:10px}
+.faq .q p{font-size:16px;color:var(--dim);max-width:72ch}
+.cta-panel{position:relative;z-index:1;text-align:center;padding:140px 48px;overflow:hidden}
+.cta-panel .bg{position:absolute;inset:0;z-index:-1}
+.cta-panel .bg img{width:100%;height:100%;object-fit:cover;opacity:.26}
+.cta-panel .bg::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(11,14,19,.3),var(--graphite) 90%)}
+.cta-panel h2{max-width:20ch;margin:0 auto 24px}
+.price-big{font-family:'Fraunces',serif;font-size:clamp(56px,7vw,96px);color:var(--blue);font-weight:400;margin:8px 0 34px}
+footer{position:relative;z-index:1;border-top:1px solid var(--line);padding:42px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--dim);letter-spacing:.06em}
+footer a{color:var(--blue);text-decoration:none}
+@media(max-width:900px){nav,.hero,section{padding-left:24px;padding-right:24px}.duo,.cards,.stats{grid-template-columns:1fr}.duo img{height:340px}.tape .cell{border-right:none}}
+</style>
+<style>
+/* ---- market-data page additions ---- */
+.dp-wrap{max-width:960px;margin:0 auto;padding:2rem 1.25rem 3rem}
+.dp-updated{display:inline-block;border:1px solid #b08d57;padding:.45rem .9rem;border-radius:999px;font-size:.9rem;margin:1rem 0}
+.dp-updated strong{color:#b08d57}
+.dp-table{width:100%;border-collapse:collapse;margin:1.2rem 0 2rem;font-size:.95rem}
+.dp-table th,.dp-table td{border-bottom:1px solid rgba(176,141,87,.35);padding:.6rem .5rem;text-align:left;vertical-align:top;overflow-wrap:break-word;word-break:break-word}
+.dp-table th{color:#b08d57}
+.dp-table td a{overflow-wrap:break-word;word-break:break-word}
+.trend-up{color:#4caf7d;font-weight:700;white-space:nowrap}
+.trend-down{color:#d97b6c;font-weight:700;white-space:nowrap}
+.trend-base{color:#b08d57;font-weight:700;white-space:nowrap}
+.dp-note{background:rgba(176,141,87,.12);border-left:3px solid #b08d57;padding:1rem 1.2rem;margin:1.5rem 0}
+.dp-note h3,.dp-wrap h2,.dp-wrap h3{overflow-wrap:break-word;word-break:break-word}
+.dp-wrap h1,.dp-wrap h2{overflow-wrap:break-word;word-break:break-word}
+.dp-cta{margin:2rem 0}
+.dp-cta a{display:inline-block;padding:.9rem 1.4rem;min-height:44px;line-height:1.4}
+.dp-changelog{border-top:1px solid rgba(176,141,87,.35);margin-top:2.5rem;padding-top:1rem}
+@media(max-width:480px){.dp-wrap{padding:1.25rem .9rem 2rem}.dp-table{font-size:.85rem}.dp-table th,.dp-table td{padding:.5rem .35rem}}
+
+/* Phase 1 assembly 2026-10-31 */
+@media (max-width:900px){h1{font-size:clamp(44px,11vw,72px)!important}}
+@media (max-width:900px){.eyebrow,.kicker{letter-spacing:.18em!important}}
+@media (max-width:900px){nav{background:#0b0e13!important;backdrop-filter:none!important}}
+
+/* Phase 1 assembly 2026-10-31 — nav solid correction */
+@media (max-width:900px){nav{background:rgb(11,14,19)!important;backdrop-filter:none!important}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "inferencebenchmarks.com — AI Inference Costs & Benchmark Scores — Market Data",
+  "description": "Aggregated public market figures for inferencebenchmarks.com, with source attribution for every figure. Information only, not investment or professional advice.",
+  "temporalCoverage": "2025–2026",
+  "dateModified": "2026-10-31",
+  "creator": {
+    "@type": "Organization",
+    "name": "Prime Domain Capital"
+  },
+  "sourceOrganization": [
+    "https://artificialanalysis.ai",
+    "https://mlcommons.org",
+    "https://www.anthropic.com",
+    "https://openai.com",
+    "https://cloud.google.com"
+  ],
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "url": "https://inferencebenchmarks.com/market-data"
+}
+</script>
+<style>
+/* Mobile rendering fix 2026-10-31: domain H1 lines, stacked nav, header clearance */
+@media (max-width:900px){
+main h1{overflow-wrap:normal!important;word-break:normal!important}
+nav:not(.toc){flex-direction:column!important;align-items:flex-start!important;gap:4px!important;padding-top:16px!important;padding-bottom:16px!important;padding-left:20px!important;padding-right:20px!important}
+.topbar{flex-direction:column!important;align-items:flex-start!important;gap:4px!important;padding-top:16px!important;padding-bottom:16px!important;padding-left:20px!important;padding-right:20px!important}
+main{padding-top:120px!important}
+main h1{font-size:clamp(30px,8.5vw,58px)!important;line-height:1.15!important}
+}
+</style>
+</head>
+<body>
+<nav><div class="brand">Prime Domain Capital</div><div class="price-tag">Buy Now <b>$17,888</b></div></nav>
+<main class="dp-wrap">
+<p class="dp-updated">Last updated: <strong>October 31, 2026</strong> &middot; Refresh cadence: <strong>WEEKLY</strong> &middot; Trend tracking starts with this edition except where a prior-period figure is shown.</p>
+<h1>AI Inference Costs &amp; Benchmark Scores — Market Data</h1>
+<p>Inference pricing now moves faster than the benchmarks that are supposed to justify it. A flagship that led an index in September can be repriced, discounted, or undercut by October, and the cheapest model on a leaderboard is rarely the cheapest model on an invoice once output tokens are counted.</p>
+<p>The tables below keep the two questions separate: what models score, and what they charge. The score table uses the Artificial Analysis Intelligence Index as reported in public summaries; the price table uses published per-million-token list prices. Neither table, on its own, answers which model to run — that answer lives in the ratio between them.</p>
+
+<h2>Benchmark scores: Artificial Analysis Intelligence Index</h2><p>Index version changed from v4.3.2 to v5.0 between editions; scores below are v5.0 and are not directly comparable to the prior edition's scores.</p>
+<table class="dp-table"><thead><tr><th>Figure</th><th>Value</th><th>Trend vs prior period</th><th>Source</th></tr></thead><tbody>
+<tr><td>Claude Opus 5.5 (Anthropic)</td><td>58.4</td><td>Prior (v4.3.2, October 2026): 57.6<br><span class="trend-up">▲ Up on the new v5.0 scale; index version changed, not a like-for-like move</span></td><td><a href="https://modelgrep.com/leaderboard">Artificial Analysis Intelligence Index v5.0, as reported via Modelgrep leaderboard</a></td></tr>
+<tr><td>Claude Sonnet 5.5 (Anthropic)</td><td>54.2</td><td>Prior (v4.3.2, October 2026): 56.0<br><span class="trend-down">▼ Down on the new v5.0 scale; index version changed, not a like-for-like move</span></td><td><a href="https://modelgrep.com/leaderboard">Artificial Analysis Intelligence Index v5.0, as reported via Modelgrep leaderboard</a></td></tr>
+<tr><td>GPT-6 Astra (OpenAI)</td><td>56.9</td><td>Prior (v4.3.2, October 2026): 52.7<br><span class="trend-up">▲ Up on the new v5.0 scale; index version changed, not a like-for-like move</span></td><td><a href="https://modelgrep.com/leaderboard">Artificial Analysis Intelligence Index v5.0, as reported via Modelgrep leaderboard</a></td></tr>
+<tr><td>Gemini 4 Argon (Google)</td><td>50.4</td><td>Prior (v4.3.2, October 2026): 52.6<br><span class="trend-down">▼ Down on the new v5.0 scale; index version changed, not a like-for-like move</span></td><td><a href="https://modelgrep.com/leaderboard">Artificial Analysis Intelligence Index v5.0, as reported via Modelgrep leaderboard</a></td></tr>
+<tr><td>GPT-6.1 Sol (OpenAI)</td><td>54.5</td><td>Prior (v4.3.2, October 2026): 51.8<br><span class="trend-up">▲ Up on the new v5.0 scale; index version changed, not a like-for-like move</span></td><td><a href="https://modelgrep.com/leaderboard">Artificial Analysis Intelligence Index v5.0, as reported via Modelgrep leaderboard</a></td></tr>
+<tr><td>Gemini 4 Carbon (Google)</td><td>59</td><td>Index leader<br><span class="trend-base">● Baseline (v5.0)</span></td><td><a href="https://artificialanalysis.ai/models">Artificial Analysis Intelligence Index v5.0 (FAQ)</a></td></tr>
+<tr><td>GPT-6.1 Terra (OpenAI)</td><td>51.0</td><td>No prior-period figure from the same source<br><span class="trend-base">● Baseline (v5.0)</span></td><td><a href="https://modelgrep.com/leaderboard">Artificial Analysis Intelligence Index v5.0, as reported via Modelgrep leaderboard</a></td></tr>
+<tr><td>Kimi K3.1 Pro (Moonshot AI)</td><td>46.0</td><td>No prior-period figure from the same source<br><span class="trend-base">● Baseline (v5.0)</span></td><td><a href="https://modelgrep.com/leaderboard">Artificial Analysis Intelligence Index v5.0, as reported via Modelgrep leaderboard</a></td></tr>
+<tr><td>DeepSeek V4.1 Flash (open weights)</td><td>32.5</td><td>Top open-weights model<br><span class="trend-base">● Baseline (v5.0)</span></td><td><a href="https://modelgrep.com/leaderboard">Artificial Analysis Intelligence Index v5.0, as reported via Modelgrep leaderboard</a></td></tr>
+<tr><td>Terminal-Bench 4.0 — Claude Opus 5.5</td><td>64.85% (agentic command-line tasks, October 2026)</td><td>Prior staged value 64.8%<br><span class="trend-base">● Flat (rounding only)</span></td><td><a href="https://benchlm.ai/benchmarks/terminal-bench-4">Terminal-Bench 4.0 public leaderboard, Oct 28, 2026 snapshot, as mirrored via BenchLM</a></td></tr>
+<tr><td>Terminal-Bench 4.0 — Claude Sonnet 5.5</td><td>61.82%</td><td>Prior staged value 61.8%<br><span class="trend-base">● Flat (rounding only)</span></td><td><a href="https://benchlm.ai/benchmarks/terminal-bench-4">Terminal-Bench 4.0 public leaderboard, Oct 28, 2026 snapshot, as mirrored via BenchLM</a></td></tr>
+<tr><td>Terminal-Bench 4.0 — GPT-6 Astra</td><td>58.18%</td><td>Prior staged value 58.2%<br><span class="trend-base">● Flat (rounding only)</span></td><td><a href="https://benchlm.ai/benchmarks/terminal-bench-4">Terminal-Bench 4.0 public leaderboard, Oct 28, 2026 snapshot, as mirrored via BenchLM</a></td></tr>
+</tbody></table>
+<h2>Published list prices per 1 million tokens (input / output)</h2>
+<table class="dp-table"><thead><tr><th>Figure</th><th>Value</th><th>Trend vs prior period</th><th>Source</th></tr></thead><tbody>
+<tr><td>Claude Opus 5.5</td><td>$4 / $20</td><td>No prior-period figure from the same source<br><span class="trend-base">● Baseline (October 2026)</span></td><td><a href="https://tech-insider.org/llm-leaderboard-claude-opus-5-5-gpt-6-1-sol-gemini-4-argon-2026/">Published pricing, via Tech Insider leaderboard comparison</a></td></tr>
+<tr><td>Claude Sonnet 5.5</td><td>$2 / $10</td><td>No prior-period figure from the same source<br><span class="trend-base">● Baseline (October 2026)</span></td><td><a href="https://tech-insider.org/llm-leaderboard-claude-opus-5-5-gpt-6-1-sol-gemini-4-argon-2026/">Published pricing, via Tech Insider leaderboard comparison</a></td></tr>
+<tr><td>GPT-6 Astra</td><td>$10 / $50 — highest-cost flagship in the comparison</td><td>No prior-period figure from the same source<br><span class="trend-base">● Baseline (October 2026)</span></td><td><a href="https://tech-insider.org/llm-leaderboard-claude-opus-5-5-gpt-6-1-sol-gemini-4-argon-2026/">Published pricing, via Tech Insider leaderboard comparison</a></td></tr>
+<tr><td>GPT-6.1 Sol</td><td>$2 / $10</td><td>No prior-period figure from the same source<br><span class="trend-base">● Baseline (October 2026)</span></td><td><a href="https://trendintech.com/gpt-6-1-sol-vs-sonnet-5-5-vs-gemini-3-8-flash-2026/">Published pricing, via TrendInTech comparison</a></td></tr>
+<tr><td>Gemini 4 Argon</td><td>$2 / $10 introductory through November 30, 2026, then $4 / $20</td><td>Scheduled rise from December 1, 2026<br><span class="trend-up">▲ Rising (scheduled)</span></td><td><a href="https://tech-insider.org/gemini-4-argon-price-doubles-sonnet-5-5-holds-2026/">Google Cloud pricing announcement, via Tech Insider</a></td></tr>
+<tr><td>Gemini 3.8 Flash</td><td>$0.75 / $3.75</td><td>No prior-period figure from the same source<br><span class="trend-base">● Baseline (October 2026)</span></td><td><a href="https://trendintech.com/gpt-6-1-sol-vs-sonnet-5-5-vs-gemini-3-8-flash-2026/">Published pricing, via TrendInTech comparison</a></td></tr>
+<tr><td>Claude Haiku 5.5</td><td>$0.10 / $0.50 — lowest in the comparison</td><td>No prior-period figure from the same source<br><span class="trend-base">● Baseline (October 2026)</span></td><td><a href="https://trendintech.com/gpt-6-1-sol-vs-sonnet-5-5-vs-gemini-3-8-flash-2026/">Published pricing, via TrendInTech comparison</a></td></tr>
+<tr><td>DeepSeek V4.1 Flash</td><td>About $0.15 / $0.60 off-peak; open weights</td><td>No prior-period figure from the same source<br><span class="trend-base">● Baseline (October 2026)</span></td><td><a href="https://techietory.com/best-ai-models-2026-claude-vs-chatgpt-vs-gemini-vs-grok-vs-deepseek/">Published pricing, via Techietory October 2026 comparison</a></td></tr>
+<tr><td>GPT-6.1 Terra</td><td>$1 / $5</td><td>No prior-period figure from the same source<br><span class="trend-base">● Baseline (October 2026)</span></td><td><a href="https://ecclesieagazzi.com/insights/best-ai-models-october-2026.html">Published pricing, via October 2026 comparison</a></td></tr>
+<tr><td>Kimi K3.1 Pro</td><td>$2 / $10</td><td>No prior-period figure from the same source<br><span class="trend-base">● Baseline (October 2026)</span></td><td><a href="https://theairankings.com/best-ai-models/">Published pricing, via comparison</a></td></tr>
+</tbody></table>
+<h2>MLPerf Inference: measured throughput, not list prices</h2>
+<table class="dp-table"><thead><tr><th>Figure</th><th>Value</th><th>Trend vs prior period</th><th>Source</th></tr></thead><tbody>
+<tr><td>MLPerf Inference v6.0 — NVIDIA Blackwell Ultra, DeepSeek-R1 (offline)</td><td>9,821 tokens/second/GPU</td><td>Prior (v5.x): 5,842<br><span class="trend-up">▲ Up (across benchmark rounds)</span></td><td><a href="https://www.storagereview.com/news/nvidia-sets-mlperf-inference-v6-0-records-with-blackwell-ultra-platform">NVIDIA MLPerf Inference v6.0 results, as reported via this coverage</a></td></tr>
+<tr><td>MLPerf Inference v6.0 — NVIDIA Blackwell Ultra, Llama 3.1 405B (offline)</td><td>271 tokens/second/GPU</td><td>Prior (v5.x): 224<br><span class="trend-up">▲ Up (across benchmark rounds)</span></td><td><a href="https://www.storagereview.com/news/nvidia-sets-mlperf-inference-v6-0-records-with-blackwell-ultra-platform">NVIDIA MLPerf Inference v6.0 results, as reported via this coverage</a></td></tr>
+<tr><td>MLPerf Inference v6.0 — GB300 NVL72, DeepSeek-R1 (server, per GPU)</td><td>8,064 tokens/second/GPU</td><td>Prior-round (v5.1): 2,907<br><span class="trend-up">▲ Up</span></td><td><a href="https://www.storagereview.com/news/nvidia-sets-mlperf-inference-v6-0-records-with-blackwell-ultra-platform">NVIDIA MLPerf Inference v6.0 results, as reported via this coverage</a></td></tr>
+<tr><td>MLPerf Inference v6.0 — GB300 NVL72, Llama 3.1 405B (server, per GPU)</td><td>259 tokens/second/GPU</td><td>Prior-round (v5.1): 170<br><span class="trend-up">▲ Up</span></td><td><a href="https://www.storagereview.com/news/nvidia-sets-mlperf-inference-v6-0-records-with-blackwell-ultra-platform">NVIDIA MLPerf Inference v6.0 results, as reported via this coverage</a></td></tr>
+<tr><td>MLPerf Inference v6.0 — GB300 NVL72 system, DeepSeek-R1 (server)</td><td>575,580 tokens/second (72-GPU system, Nebius submission)</td><td>New benchmark round; not comparable to per-GPU v5.x figures<br><span class="trend-base">● Baseline (October 2026)</span></td><td><a href="https://nebius.com/blog/posts/mlperf-inference-v6-0-results?es_id=bbd1db47b0">Nebius MLPerf Inference v6.0 results summary</a></td></tr>
+<tr><td>MLPerf Inference v6.0 — software-only gain claimed</td><td>2.77x throughput gain (server; 1.68x offline) vs v5.1 on unchanged GB300-NVL72 hardware</td><td>Prior: performance six months earlier, same hardware<br><span class="trend-up">▲ Up (vendor claim)</span></td><td><a href="https://www.storagereview.com/news/nvidia-sets-mlperf-inference-v6-0-records-with-blackwell-ultra-platform">NVIDIA MLPerf Inference v6.0 results, as reported via this coverage</a></td></tr>
+</tbody></table>
+
+<div class="dp-note"><h3>Methodology</h3><p>Included: the Artificial Analysis Intelligence Index as republished in public rankings, published per-token list prices as summarized from provider pricing pages, and MLPerf Inference results as published by submitters. Excluded: negotiated enterprise discounts, which providers do not publish, and any single-vendor benchmark that is not an MLPerf or Artificial Analysis result. Per-GPU MLPerf figures are derived by submitters by dividing system throughput by accelerator count and are labelled as such in the source; system-level v6.0 figures are not directly comparable to per-GPU v5.x figures. v6.0 per-GPU figures are compared across benchmark rounds, not within one round.</p>
+<p>Trend labels: &ldquo;Baseline (October 2026) — trend tracking starts with the next refresh&rdquo; means no prior-period figure from the same source was available this session, so no movement is claimed. Where a prior figure is shown, the trend compares the current figure with that prior figure from the same source.</p></div>
+<div class="dp-note"><h3>Disclaimer</h3><p>Figures on this page are aggregated public estimates compiled for information only. They are not investment advice, professional advice, or an offer to buy or sell any security or asset. Figures change as sources revise or republish them; verify any figure against its linked source before relying on it.</p></div>
+<div class="dp-cta"><a class="btn" href="https://www.afternic.com/domain/inferencebenchmarks.com">Buy inferencebenchmarks.com — $17,888 on Afternic</a> &nbsp; <a href="mailto:info@primedomaincapital.com?subject=inferencebenchmarks.com%20market%20data%20inquiry">info@primedomaincapital.com</a></div>
+<p>This domain is offered by Prime Domain Capital. Contact only at <a href="mailto:info@primedomaincapital.com">info@primedomaincapital.com</a>.</p>
+<section class="dp-changelog"><h2>Changelog</h2>
+<ul><li><strong>October 2026:</strong> First edition, published as a staged page. Figures compiled from the public sources listed in SOURCES.md, with trend indicators and baseline labels as shown above. Next refresh follows the WEEKLY cadence in SOURCES.md; the sitemap lastmod for this page is to be updated on every refresh once deployed.</li>
+<li><strong>October 31, 2026:</strong> Artificial Analysis scores updated to Intelligence Index v5.0 (version change from v4.3.2 stated on-page); four new score rows added (Gemini 4 Carbon, GPT-6.1 Terra, Kimi K3.1 Pro, DeepSeek V4.1 Flash); Terminal-Bench 4.0 rows confirmed against the Oct 28, 2026 leaderboard snapshot; two new price rows added (Terra, Kimi); all staged list prices reconfirmed, including Gemini 4 Argon introductory pricing through Nov 30, 2026; MLPerf rows updated to v6.0 per-GPU figures. No staged row dropped.</li></ul></section>
+</main>
+<footer>Offered by <strong>Prime Domain Capital</strong> &middot; <a href="mailto:info@primedomaincapital.com">info@primedomaincapital.com</a></footer>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "1407571ec8bc45c3a082c91096558135"}'></script>
+<p class="back-home" style="display:block;text-align:center;padding:28px 16px;font-size:15px"><a href="https://inferencebenchmarks.com/" style="color:inherit">&larr; Back to inferencebenchmarks.com</a></p>
+</body>
+</html>
