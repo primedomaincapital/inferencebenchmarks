@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Latency vs. Throughput: The Benchmark Trade-Off Nobody Publishes — InferenceBenchmarks.com Insights</title>
+<meta name="description" content="The median model writes about 80 tokens a second and answers in 1.1 seconds. Cerebras decodes at 1,730. The same weights run six times faster on a different stack — and a reasoning model can take five minutes to say its first word.">
+<meta property="og:title" content="Latency vs. Throughput: The Benchmark Trade-Off Nobody Publishes">
+<meta property="og:description" content="The median model writes about 80 tokens a second and answers in 1.1 seconds. Cerebras decodes at 1,730. The same weights run six times faster on a different stack — and a reasoning model can take five minutes to say its first word.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://inferencebenchmarks.com/insights/article7">
+<meta property="og:image" content="https://inferencebenchmarks.com/images/photo4.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Latency vs. Throughput: The Benchmark Trade-Off Nobody Publishes">
+<meta name="twitter:description" content="The median model writes about 80 tokens a second and answers in 1.1 seconds. Cerebras decodes at 1,730. The same weights run six times faster on a different stack — and a reasoning model can take five minutes to say its first word.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context": "https://schema.org","@type": "Article","headline": "Latency vs. Throughput: The Benchmark Trade-Off Nobody Publishes","description": "The median model writes about 80 tokens a second and answers in 1.1 seconds. Cerebras decodes at 1,730. The same weights run six times faster on a different stack \u2014 and a reasoning model can take five minutes to say its first word.","author": {"@type": "Organization","name": "Prime Domain Capital"},"publisher": {"@type": "Organization","name": "Prime Domain Capital"},"datePublished": "2026-11-19","mainEntityOfPage": "https://inferencebenchmarks.com/insights/article7"}</script>
+<style>
+:root{--graphite:#0b0e13;--panel:#12161d;--line:rgba(110,168,254,.16);--blue:#6ea8fe;--blue-dim:#3d6db8;--paper:#eef1f5;--dim:#9aa7b8}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--graphite);color:var(--paper);font-family:'Inter',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:20px 48px;background:linear-gradient(to bottom,rgba(11,14,19,.94),transparent)}
+nav a.brand{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.3em;color:var(--blue);text-transform:uppercase;text-decoration:none}
+nav .price-tag{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--dim);text-transform:uppercase}
+nav .price-tag b{color:var(--paper);font-weight:500}
+section{position:relative;z-index:1;padding:120px 48px;max-width:1280px;margin:0 auto}
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+.kicker{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--blue-dim);margin-bottom:20px}
+h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(38px,5.4vw,68px);line-height:1.12;margin-bottom:28px}
+h1 em{font-style:italic;color:var(--blue)}
+h2{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(30px,4vw,46px);line-height:1.18;margin-bottom:28px}
+h2 em{font-style:italic;color:var(--blue)}
+.art-h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(24px,3vw,32px);margin:46px 0 18px;color:var(--paper)}
+.deck{font-size:20px;color:var(--dim);max-width:64ch}
+.byline{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue-dim);margin-top:26px}
+.body-copy{font-size:18px;color:var(--dim);max-width:68ch;margin-bottom:22px}
+.body-copy strong{color:var(--paper);font-weight:500}
+.pull{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(24px,3vw,34px);line-height:1.4;color:var(--paper);border-left:2px solid var(--blue);padding-left:32px;margin:48px 0;max-width:34ch}
+.band{position:relative;z-index:1}
+.band img{width:100%;height:420px;object-fit:cover;display:block}
+.btn{display:inline-block;padding:18px 42px;background:var(--blue);color:#0b0e13;text-decoration:none;font-size:13px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;transition:.35s;border:1px solid var(--blue)}
+.btn:hover{background:transparent;color:var(--blue)}
+.cta-panel{position:relative;z-index:1;text-align:center;padding:130px 48px;overflow:hidden}
+.cta-panel .bg{position:absolute;inset:0;z-index:-1}
+.cta-panel .bg img{width:100%;height:100%;object-fit:cover;opacity:.26}
+.cta-panel .bg::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(11,14,19,.3),var(--graphite) 90%)}
+.cta-panel h2{max-width:20ch;margin:0 auto 24px}
+.price-big{font-family:'Fraunces',serif;font-size:clamp(52px,6.6vw,88px);color:var(--blue);margin:8px 0 34px}
+.backlink{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue);text-decoration:none}
+footer{position:relative;z-index:1;border-top:1px solid var(--line);padding:42px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--dim);letter-spacing:.06em}
+footer a{color:var(--blue);text-decoration:none}
+@media(max-width:900px){nav,section{padding-left:24px;padding-right:24px}}
+.body-copy a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+</style>
+<link rel="canonical" href="https://inferencebenchmarks.com/insights/article7">
+</head>
+<body>
+<nav>
+  <a class="brand" href="../index.html">InferenceBenchmarks.com</a>
+  <div class="price-tag">Buy Now &nbsp;<b>$17,888</b></div>
+</nav>
+<section style="padding-bottom:40px">
+  <a class="backlink" href="../index.html">&larr; Back to InferenceBenchmarks.com</a>
+  <div class="kicker reveal" style="margin-top:44px">Insights · AI inference economics</div>
+  <h1 class="reveal">Latency vs. Throughput: The Benchmark Trade-Off <em>Nobody Publishes</em></h1>
+  <p class="deck reveal">The median model writes about 80 tokens a second and answers in 1.1 seconds. Cerebras decodes at 1,730. The same weights run six times faster on a different stack — and a reasoning model can take five minutes to say its first word.</p>
+  <div class="byline reveal">Prime Domain Capital &middot; November 2026</div>
+</section>
+<section style="padding-top:70px">
+<p class="body-copy reveal">In the spring of 2026, a voice-AI startup in New York demoed its agent to a room of prospective customers. The model wrote beautifully — three hundred tokens a second, the fastest the team had ever measured. The demo still failed. The first word arrived four seconds after the caller stopped speaking, and in that silence the customer heard a dead line. The team had optimized the number on the leaderboard and shipped the number that did not matter.</p>
+<p class="body-copy reveal">Inference speed is three numbers pretending to be one. Time to first token — TTFT — is how long the user waits before anything appears. Output tokens per second is how fast the answer streams once it starts. Time per task is how long the whole job takes, thinking included. Each answers a different question, and a model can win any one of them while losing the other two. The field, as BenchLeader measured it on November 19, 2026 across 212 ranked models, centers on about 80 output tokens per second and a median time to first token of 1.1 seconds. Those medians describe the middle of the market. Nobody buys the middle on purpose.</p>
+<p class="body-copy reveal">The top of the speed board belongs to custom silicon. Cerebras decodes OpenAI’s gpt-oss-120b at about 1,730 tokens per second, according to Artificial Analysis measurements cited in IA Decider’s November 2026 reference — roughly 2.4 times the next endpoint, with 1.51 seconds to the first answer token on the 10,000-token workload. Groq’s LPU posts the fastest Llama 3.3 70B decode among the eleven providers Artificial Analysis tracks, about 307 tokens per second with 0.99 seconds to first token. The fastest model BenchLeader tracks overall is Celeris-1 at about 720 tokens per second. Among models scoring 60 or more on the BenchLeader Index, Meta’s Muse Spark 1.2 is fastest at about 200 tokens per second. The gap between the fastest silicon and the median model is roughly twenty to one — and it is a hardware story as much as a model story.</p>
+<p class="body-copy reveal">The route matters as much as the model, and this is the trade-off the leaderboards bury. The same open weights decode at wildly different speeds depending on who serves them. Z AI’s GLM-5.3 runs at 63 tokens per second on its native API and 409 tokens per second on a third-party stack — the identical weights, six and a half times faster, because the serving stack changed and nothing else did. DeepSeek’s V4.1 Flash streams at about 206 tokens per second on DeepSeek’s own API and 755 tokens per second on Baseten’s FAST route. A buyer who picks a model by its benchmark speed and then runs it on the slowest host has bought the number without the performance. The honest question is never how fast the model is. It is how fast the model is on the endpoint you will actually pay for.</p>
+<p class="body-copy reveal">Reasoning breaks the leaderboard entirely. Tokens per second counts only the tokens a model writes after it starts answering, and a reasoning model does its thinking before it writes a word — so the wait is invisible to the speed number. SpringPrompt’s November 9, 2026 speed comparison, timed through OpenRouter, makes the gap plain: Claude Sonnet 5.5 at maximum reasoning takes 5.4 minutes to produce its first token. Claude Haiku 5.5 at maximum reasoning takes 4.7 minutes. Meta’s Muse Spark 1.3 at extra-high reasoning takes 30 seconds. OpenAI’s GPT-6 Luna at maximum reasoning takes 116 seconds. The same comparison timed whole tasks: Moonshot AI’s Kimi K3.1 Pro needed 114 seconds to turn a sparse product feed into a publishable listing, while Google’s Gemini 3.5 Flash-Lite did it in 3.3 seconds. A model streaming at 300 tokens per second still takes two and a half minutes when it insists on writing 48,000 of them. Time per task is the number that catches this. Tokens per second is the number that hides it.</p>
+<p class="body-copy reveal">The tails are worse than the medians, and the medians are what get published. Ezkielyna, an independent API gateway, published its measurement rules on November 16, 2026 with a snapshot from November 12: for DeepSeek V4.1 Flash, the 90th-percentile time to first token was 10,883 milliseconds against a median of 3,844 — the slow tenth of requests waited 2.8 times as long as the typical one. Its rules are the right ones and worth stealing: report the median and the 90th percentile, never the mean, because latency distributions have long tails and a mean describes nobody’s real experience; and only count tokens per second on answers with at least 50 output tokens and two seconds of generation, because a ten-token answer can post a flattering rate by accident. For voice agents, the whole pipeline has to land under about 800 milliseconds end to end — a budget the model’s TTFT alone can already consume.</p>
+<p class="body-copy reveal">The smartest model on the board is a middling-fast one, and that is the point. Claude Fable 5.2, the BenchLeader Index leader, generates about 110 tokens per second with a 4.0-second time to first token. The quickest first token among models scoring 60 or more belongs to Moonshot AI’s Kimi K3 at 0.76 seconds; the quickest of any ranked model is Cohere’s Command A+ at 0.17 seconds. Intelligence and speed are not the same ranking, and they are not even correlated in the direction buyers assume: the models that think hardest are the ones that answer slowest, because the thinking is the work. Artificial Analysis, which supplies most of these measurements, hits live endpoints eight times a day across 1,000-, 10,000- and 100,000-token workloads and publishes the median of a rolling 72-hour window. That is careful measurement — and it is still single-stream measurement, one request at a time, on an unloaded endpoint.</p>
+<p class="pull reveal">A model that writes at 300 tokens a second and thinks for four seconds is a slow model wearing a fast number.</p>
+<h2 class="art-h2 reveal">The honest objection</h2>
+<p class="body-copy reveal">The latency-versus-throughput framing can be overplayed, and the other side deserves its hearing. For batch workloads — nightly classification, bulk summarization, offline evaluation — neither number matters at all; throughput per dollar is the only speed that counts, and a slow model bought in batch at half price beats a fast one bought in real time. For many chat products, a 1.1-second median time to first token is already good enough, and quality dominates speed once the wait stops being noticeable. Serving stacks improve constantly: a frontier model at 46 tokens per second today can be 120 next quarter on better kernels, with no model change at all. And time to first token is not purely a model number — it includes the network, the region, cold starts and queueing, so two buyers measuring the same model from different setups will record different latencies and both be right. The leaderboard is a snapshot of a moving system, not a property of the model.</p>
+<h2 class="art-h2 reveal">What to measure instead</h2>
+<p class="body-copy reveal">Measure the number your workload actually feels. Voice agents live or die on time to first token at the 90th percentile, with an 800-millisecond end-to-end budget that leaves no room for a reasoning pause. Streaming chat is a tokens-per-second product once the first word lands — and the first word still has to land. Agent loops are time-per-task products: count the minutes, including thinking, and count the tokens the model writes to get there, because verbosity is latency with a price tag. Batch work is a throughput-per-dollar product, and the right benchmark is jobs per hour per dollar, not tokens per second. Whatever you measure, measure it under your own concurrency, on the endpoint you will pay for, at the 90th percentile — and re-measure it monthly, because the stack that served you 300 tokens a second in October may serve you half that in November, or twice.</p>
+<p class="body-copy reveal">The teams that ship fast products are not the ones that picked the fastest model. They are the ones that picked the right number first, then found the model and the stack that deliver it under load. Everything else is a leaderboard — and a leaderboard is a ruler that measures one dimension while your users feel all three.</p>
+<p class="body-copy reveal"><em>The category-defining name for that measurement — inferencebenchmarks.com — is available for $17,888.</em></p>
+<h2 class="art-h2 reveal">Sources</h2><ul class="body-copy reveal" style="list-style:none;padding-left:0"><li style="margin-bottom:10px"><a href="https://www.benchleader.com/stats/llm-speed">BenchLeader, “LLM speed statistics”</a> &mdash; data as of November 19, 2026; 212 ranked models with measured speed</li><li style="margin-bottom:10px"><a href="https://iadecider.com/articles/inference-latency-reference-2026">IA Decider, “LLM Inference Speed Reference 2026”</a> &mdash; Artificial Analysis measurements, October–November 2026</li><li style="margin-bottom:10px"><a href="https://springprompt.com/llm-api-speed">SpringPrompt, “LLM API Speed Comparison (November 2026)”</a> &mdash; speeds measured November 9, 2026; 137 model-and-reasoning settings</li><li style="margin-bottom:10px"><a href="https://ezkielyna.store/en/articles/measuring-llm-latency">Ezkielyna, “Measuring LLM latency honestly”</a> &mdash; gateway status feed snapshot November 12, 2026; published November 16</li><li style="margin-bottom:10px"><a href="https://inferencehub.org/blog/ai-api-price-changes-2026">InferenceHub, “AI API Price Changes 2026”</a> &mdash; official list prices checked November 17, 2026</li></ul><p class="body-copy reveal">All prices and speeds are list prices and published measurements as of the dates shown. Providers change both without notice; re-check the source pages before committing a budget to any figure here.</p>
+</section>
+<div class="cta-panel">
+  <div class="bg"><img src="../images/photo4.jpg" alt=""></div>
+  <div class="kicker reveal">Acquisition</div>
+  <h2 class="reveal">Own the name the industry <em>measures by.</em></h2>
+  <div class="price-big reveal">$17,888</div>
+  <div class="reveal"><a class="btn" href="https://www.afternic.com/domain/inferencebenchmarks.com">Buy Now via Afternic</a></div>
+</div>
+<footer>
+  <span>Offered by <strong>Prime Domain Capital</strong> — a private holder of category-defining domains.</span>
+  <span><a href="mailto:info@primedomaincapital.com">info@primedomaincapital.com</a></span>
+</footer>
+<script>
+const io=new IntersectionObserver(e=>e.forEach(v=>{if(v.isIntersecting){v.target.classList.add('in');io.unobserve(v.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+<!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "1407571ec8bc45c3a082c91096558135"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
