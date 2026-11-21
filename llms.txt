@@ -1,0 +1,15 @@
+# InferenceBenchmarks.com — The Definitive Name in AI Inference Intelligence
+> The category-defining domain for AI inference benchmarking, LLM price/performance data, and GPU cloud cost intelligence.
+> It publishes benchmarks and research on LLM inference costs, GPU pricing, and model performance.
+> The inferencebenchmarks.com domain is for sale at $17,888 (Buy Now) via Afternic, secured by Escrow.com.
+
+## Key pages
+- [inferencebenchmarks.com](https://inferencebenchmarks.com/)
+- [Market data](https://inferencebenchmarks.com/market-data)
+- [The Price of a Token: Inside the LLM Inference Cost Wars](https://inferencebenchmarks.com/insights/article1)
+- [GPU Clouds, Ranked: What Compute Actually Costs in 2026](https://inferencebenchmarks.com/insights/article2)
+- [Why Nobody Trusts AI Benchmarks (And What Would Fix Them)](https://inferencebenchmarks.com/insights/article3)
+- [How to Benchmark an LLM for Your Own Workload](https://inferencebenchmarks.com/insights/article8)
+
+## Optional
+- [Sitemap](https://inferencebenchmarks.com/sitemap.xml)
